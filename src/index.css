@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --white: #fff;
+    --black: #111;
+    --blue: #3a80e9;
+    --grey: #888;
+    --darkgrey: #222222;
+    --green : #61c96f;
+    --red: #f94141;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    -webkit-line-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+    /* height: 200vh; */
+}
+::selection{
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: .5rem;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--darkgrey);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 1rem;
+  }
+  
+  /* Handle on hover */
+  /* ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  } */
+
+  a{
+    color: var(--white) !important;
+    text-decoration: none;
+  }
+
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+  }
+  
+  .grey-wrapper{
+    display: block;
+    width: 90%;
+    background-color: var(--darkgrey);
+    margin: 1.5rem auto;
+    border-radius: 0.8rem;
+    padding: 1rem 1rem;
+  }
+
+  .grey-wrapper h2, p{
+    margin: 1rem 0rem;
+  }
+
+  .coins-days-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1.5rem;
+    gap: 2rem;
+  }
+
+  .cursor {
+    position: fixed;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+    background-color: var(--white);
+    z-index: 10000;
+    border: 2px solid var(--blue);
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 50%;
+    transition: all 200ms ease-out;
+  } 
+  
+  .cursor-pointer {
+    position: fixed;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+    background-color: transparent;
+    z-index: 10000;
+    border: 2px solid var(--green);
+    height: .8rem;
+    width: .8rem;
+    transition: all 200ms ease-out;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .cursor-pointer,
+    .cursor {
+      display: none;
+    }
+  }
+
+
