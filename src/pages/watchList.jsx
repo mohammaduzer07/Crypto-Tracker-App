@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Button from "../components/Common/Button";
-// import Footer from "../components/Common/Footer";
 import Header from "../components/Common/Header";
 import Loader from "../components/Common/Loader";
 import TabsComponent from "../components/Dashboard/Tabs";
 import { get100Coins } from "../functions/get100Coins";
+import { Link } from "react-router-dom";
 
 function WatchlistPage() {
   const coins = JSON.parse(localStorage.getItem("watchlist")) || [];
@@ -37,9 +37,9 @@ function WatchlistPage() {
                 No Items in the Watchlist
               </h1>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <a href="/dashboard">
+                <Link to="/dashboard">
                   <Button text={"Dashboard"} />
-                </a>
+                </Link>
               </div>
             </div>
           ) : (
@@ -49,10 +49,8 @@ function WatchlistPage() {
               {/* <TabsComponent coins={myWatchlist} isWatchlistPage={true} /> */}
             </div>
           )}
-          
         </div>
       )}
-      {/* <Footer /> */}
     </div>
    
   );
