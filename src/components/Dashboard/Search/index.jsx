@@ -10,7 +10,7 @@ function Search({search, onSearchChange}) {
             <SearchRoundedIcon />
             <input placeholder='Search' type='text' value={search} onChange={(e) =>onSearchChange(e)} />
         </div>
-    )
+    );
 }
 
 export default Search

@@ -7,7 +7,7 @@ import PaginationComponent from "../components/Dashboard/Pagination";
 import Loader from "../components/Common/Loader";
 import BackToTop from "../components/Common/BackToTop";
 import { get100Coins } from "../functions/get100Coins";
-
+import Footer from "../components/Common/Footer";
 
 function DashboardPage() {
 
@@ -27,14 +27,15 @@ function DashboardPage() {
         setSearch(e.target.value);
     }
 
-    var filteredCoins = coins.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()) || 
-    item.symbol.toLowerCase().includes(search.toLowerCase()));
+    var filteredCoins = coins.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()) ||
+        item.symbol.toLowerCase().includes(search.toLowerCase()));
 
     useEffect(() => {
         getData();
     }, []);
 
     const getData = async () => {
+        setIsLoading(true);
         const myCoins = await get100Coins();
         if (myCoins) {
             setCoins(myCoins);
@@ -45,14 +46,16 @@ function DashboardPage() {
 
     return (
         <>
-            <Header />
             <BackToTop />
             {isLoading ? (
                 <Loader />
             ) : (
-                <div>
+                <div style={{ minHeight: "90vh" }}>
+                    <Header />
                     <Search search={search} onSearchChange={onSearchChange} />
-                    <TabsComponent coins={search ? filteredCoins : paginatedCoins} />
+                    <TabsComponent coins={search ? filteredCoins : paginatedCoins}
+                        setSearch={setSearch}
+                    />
                     {!search && (
                         <PaginationComponent
                             page={page}

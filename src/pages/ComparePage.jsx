@@ -125,4 +125,4 @@ function ComparePage() {
   )
 }
 
-export default ComparePage
+export default ComparePage;

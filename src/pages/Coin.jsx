@@ -65,7 +65,6 @@ function CoinPage() {
     }
   };
 
-
   return (
     <div>
       <Header />

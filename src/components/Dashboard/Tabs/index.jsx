@@ -6,9 +6,10 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { createTheme, ThemeProvider } from '@mui/material';
 import Grid from "../Grid";
-import List
-  from '../List';
+import List from '../List';
+import Button from '../../Common/Button';
 import "./styles.css";
+
 
 export default function TabsComponent({ coins, isWatchlistPage, setSearch }) {
   const [value, setValue] = useState('1');
@@ -63,7 +64,7 @@ export default function TabsComponent({ coins, isWatchlistPage, setSearch }) {
                   delay={((i + 5) % 5) * 0.1}
                   isWatchlistPage={isWatchlistPage} />
               ))
-            )};
+            )}
           </Box>
         </TabPanel>
         <TabPanel value="list">
@@ -77,7 +78,7 @@ export default function TabsComponent({ coins, isWatchlistPage, setSearch }) {
                   <Button
                     text={"Clear Search"}
                     onClick={(e) => {
-                      setSearch("");
+                      setSearch("")
                     }}
                   />
                 </div>
@@ -95,5 +96,5 @@ export default function TabsComponent({ coins, isWatchlistPage, setSearch }) {
         </TabPanel>
       </TabContext>
     </ThemeProvider>
-  );
+  )
 }

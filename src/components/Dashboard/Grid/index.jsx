@@ -91,11 +91,10 @@ function Grid({ coin, delay, isWatchlistPage }) {
                     </h3>
                     <p className='total-volume'>Total Volume : {coin.total_volume.toLocaleString()}</p>
                     <p className='total-volume'>Market Cap : ${coin.market_cap.toLocaleString()}</p>
-
                 </div>
             </motion.div>
         </Link>
     )
 }
 
-export default Grid
+export default Grid;
